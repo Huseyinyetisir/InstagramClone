@@ -5,21 +5,22 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Entity
 public class User {
 
     @Id
-    private String id;
+    private String  id;
 
-    private String name;
+    private String  name;
 
-    private String dateOfBirth;
-    private City city;
+    private String  dateOfBirth;
+    private City    city;
 
 }
