@@ -2,6 +2,7 @@ package com.cloneproject.instagram.controller;
 
 
 import com.cloneproject.instagram.dto.CreateUserRequest;
+import com.cloneproject.instagram.dto.UpdateUserRequest;
 import com.cloneproject.instagram.dto.UserDto;
 import com.cloneproject.instagram.service.UserService;
 import org.springframework.http.ResponseEntity;
@@ -31,9 +32,23 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable String id){
         return ResponseEntity.ok(userService.getUserById(id));
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<UserDto> updateUser(@PathVariable String id ,@RequestBody UpdateUserRequest updateUserRequest){
+        return ResponseEntity.ok(userService.updateUser(id,updateUserRequest));
+    }
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> deactiveUser (@PathVariable("id") String id){
+        userService.deactiveUser(id);
+        return ResponseEntity.ok().build();
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser (@PathVariable("id") String id) {
+        userService.deleteUser(id);
+        return ResponseEntity.ok().build();
 
 
     }
