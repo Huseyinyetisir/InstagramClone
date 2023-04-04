@@ -12,11 +12,10 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="USER")
+@Builder
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String  id;
 
     private String  mail;
@@ -29,9 +28,9 @@ public class User {
 
     private City    city;
 
-    @OneToMany(mappedBy = "user")
-    @JoinColumn(name = "post_id", nullable = false)
-    private Set<Post> post;
+//    @OneToMany(mappedBy = "user")
+//    @JoinColumn(name = "post_id", nullable = false)
+//    private Set<Post> post;
 
 
 }

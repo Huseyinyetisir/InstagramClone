@@ -60,7 +60,7 @@ public class UserService {
     return userDtoList;
     }
 
-    public UserDto getUserById(String id){
+    public UserDto getUserDtoById(String id){
         Optional<User> userOptional = userRepository.findById(id);
         return userOptional.map(userDtoConverter::convert).orElse(new UserDto());
     }
@@ -83,5 +83,9 @@ public class UserService {
 
     public void deleteUser(String id) {
         userRepository.deleteById(id);
+    }
+
+    protected User getUserById (String id){
+        return userRepository.findById(id).orElse(new User());
     }
 }

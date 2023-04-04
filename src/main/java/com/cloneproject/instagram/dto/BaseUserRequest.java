@@ -1,6 +1,5 @@
 package com.cloneproject.instagram.dto;
 
-
 import com.cloneproject.instagram.model.City;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -11,8 +10,15 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Builder
-public class CreateUserRequest extends BaseUserRequest{
+public class BaseUserRequest {
 
-    private String  id;
+    private String  mail;
 
+    private String  firstName;
+
+    private String  lastName;
+
+    private String  dateOfBirth;
+
+    private City    city;
 }

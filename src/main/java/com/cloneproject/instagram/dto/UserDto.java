@@ -1,8 +1,7 @@
 package com.cloneproject.instagram.dto;
 
 import com.cloneproject.instagram.model.City;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
