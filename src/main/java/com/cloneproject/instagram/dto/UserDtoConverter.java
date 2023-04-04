@@ -8,8 +8,9 @@ public class UserDtoConverter {
 
     public UserDto convert(User user){
         UserDto userDto = new UserDto();
-        userDto.setId(user.getId());
-        userDto.setName(user.getName());
+        userDto.setMail(user.getMail());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
         userDto.setDateOfBirth(user.getDateOfBirth());
         userDto.setCity(user.getCity());
 
